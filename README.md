@@ -1,12 +1,12 @@
-# SimpleLink ti_wisunfan Examples
+# SimpleLink ti154stack Examples
 
-This repository contains the ti_wisunfan examples for TI devices supported by the
+This repository contains the ti154stack examples for TI devices supported by the
 SimpleLink Low Power F2 SDK.  To learn which devices are supported by
 the SDK, refer to the [SDK Device Association section](#sdk-association).
 
 ## Repository Layout
 
-The **examples/** directory contains the same ti_wisunfan examples provided in the
+The **examples/** directory contains the same ti154stack examples provided in the
 SDK, in the same directory structure.
 
 The SimpleLink Low Power F2 SDK is provided as [Git
@@ -18,7 +18,7 @@ one step like this:
 
 ```bash
 # To initialize and update the F2 SDK
-.../simplelink-ti_wisunfan-examples$ git submodule update --init cc13xx_cc26xx_sdk
+.../simplelink-ti154stack-examples$ git submodule update --init cc13xx_cc26xx_sdk
 ```
 
 Alternatively you can clone and initialize/update _all_ submodules when cloning a repo
@@ -58,7 +58,7 @@ versions for each SDK if needed.
 
 ## Build Examples
 
-After building the SDK libraries, you can build the ti_wisunfan examples.  The
+After building the SDK libraries, you can build the ti154stack examples.  The
 examples support two ways to build:
 
 * [CCS IDE](#build-examples-from-ccs)
