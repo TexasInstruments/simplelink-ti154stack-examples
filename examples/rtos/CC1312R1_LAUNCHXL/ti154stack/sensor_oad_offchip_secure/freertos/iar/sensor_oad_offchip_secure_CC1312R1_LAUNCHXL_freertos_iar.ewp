@@ -635,8 +635,23 @@
             <name>BUILDACTION</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <prebuild></prebuild>
-                <postbuild>$COM_TI_SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/source/ti/ti154stack/apps/sensor_oad_offchip/CC13X2_CC26X2R1_LAUNCHXL/sensor_oad_offchip_sec.bat $PROJ_FNAME$ $CONFIG_NAME$ $TARGET_BPATH$ $PROJ_DIR$ $COM_TI_SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$</postbuild>
+                <buildActions>
+                        <buildAction>
+                            <cmdline>$SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/tools/common/oad/oad_image_tool --verbose unused $TARGET_DIR$ 7 -hex1  $TARGET_BNAME$.hex -k $SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/tools/common/oad/private.pem -o $TARGET_BNAME$</cmdline>
+                            <workingDirectory>$PROJ_DIR$/$CONFIG_NAME$</workingDirectory>
+                            <buildSequence>postLink</buildSequence>
+                        </buildAction>
+                        <buildAction>
+                            <cmdline>$SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/tools/common/turbo_oad/toad_image_tool --verbose -j $PROJ_DIR$/ti_154stack_toad_config.json -k $SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR$/tools/common/oad/private.pem -nimg $TARGET_DIR$/$TARGET_BNAME$.bin -o $TARGET_DIR$/$TARGET_BNAME$.dim</cmdline>
+                            <workingDirectory>$PROJ_DIR$/$CONFIG_NAME$</workingDirectory>
+                            <buildSequence>postLink</buildSequence>
+                        </buildAction>
+                        <buildAction>
+                            <cmdline>ielftool --ihex --verbose $TARGET_BPATH$.out $TARGET_BPATH$.hex</cmdline>
+                            <workingDirectory>$PROJ_DIR$/$CONFIG_NAME$</workingDirectory>
+                            <buildSequence>postLink</buildSequence>
+                        </buildAction>
+            </buildActions>
             </data>
         </settings>
         <settings>
