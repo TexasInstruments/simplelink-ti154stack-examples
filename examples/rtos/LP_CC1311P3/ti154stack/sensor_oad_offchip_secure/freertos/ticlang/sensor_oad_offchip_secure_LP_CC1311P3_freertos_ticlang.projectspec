@@ -106,7 +106,6 @@
             ${COM_TI_SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR}/tools/common/oad/oad_image_tool --verbose unused ${BuildDirectory} 7 -hex1 ${BuildArtifactFileBaseName}.hex -o ${BuildArtifactFileBaseName};;
             ${COM_TI_SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR}/tools/common/turbo_oad/toad_image_tool --verbose -j ${BuildDirectory}/syscfg/ti_154stack_toad_config.json -nimg ${BuildDirectory}/${BuildArtifactFileBaseName}.bin -o ${BuildDirectory}/${BuildArtifactFileBaseName}.dim;
         "
-        enableSysConfigTool="true"
         sysConfigBuildOptions="
             --product ${COM_TI_SIMPLELINK_CC13XX_CC26XX_SDK_INSTALL_DIR}/.metadata/product.json
             --compiler ticlang
